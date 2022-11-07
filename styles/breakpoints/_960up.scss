@@ -1,0 +1,149 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+
+.font-sm {
+    font-size: 16px;
+}
+
+.font-md {
+    font-size: 19px;
+}
+
+.font-lr {
+    font-size: 23px;
+}
+
+.font-lm {
+    font-size: 28px;
+}
+
+.font-lg {
+    font-size: 36px;
+}
+
+.mb-lg {
+    margin-bottom: 150px !important;
+}
+
+.pb-lg {
+    padding-bottom: 150px !important;
+}
+
+a.anchor{
+    display: block;
+    padding-top: 150px;
+    margin-top: -150px;
+}
+
+.popular{
+    &__item{
+        flex-basis: 25%;
+    }
+
+    &__img{
+        height:335px;
+    }
+}
+
+.menu{
+    .swiper-slide{
+        height: 400px;
+        margin-bottom: 25px;
+    }
+}
+
+.seat{
+    &__item{
+        flex-basis: 23%;
+
+        &:nth-child(4){
+            display: none;
+        }
+
+        &:nth-child(5){
+            display: block;
+        }
+    }
+
+    &__img{
+        height:350px;
+
+        & > img{
+            &:nth-child(5){
+                object-position: center;
+            }
+        }
+    }
+
+}
+
+.travel{
+
+    &__description{
+        margin-bottom: 40px;
+    }
+
+    &__title{
+        &::before{
+            display:block;
+        }
+    }
+
+    &__img{
+        height:400px;
+    }
+}
+
+.course{
+
+    &__description{
+        margin-bottom: 40px;
+    }
+
+    &__title{
+        &::before{
+            display:block;
+        }
+    }
+
+    &__img{
+        height:400px;
+    }
+}
+
+.infor{
+    &__inner{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__table,
+    &__map{
+        flex-basis: 47%;
+    }
+    
+    &__map{
+        height:470px;
+    }
+    
+}
+
+.header{
+    &__nav{
+        display: block;
+    }
+}
+
+.mobile-menu{
+    &__btn{
+        display: none;
+    }
+}
+
+.swiper-slide{
+    box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,106 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+.flex{
+    flex-direction: row;
+        flex-wrap:wrap;
+}
+
+.liquor{
+
+    &__inner{
+        justify-content: space-between;
+    }
+
+    &__item{
+        flex-basis: 47%;
+        margin-bottom: 60px;
+    }
+}
+
+.popular{
+    &__container{
+        justify-content: space-between;
+    }
+
+    &__item{
+        flex-basis: 47%;
+    }
+}
+
+.seat{
+    &__container{
+        justify-content: space-between;
+    }
+
+    &__item{
+        flex-basis: 47%;
+    }
+}
+
+.course{
+    &__inner{
+        padding:50px;
+    }
+    &__texts,
+    &__img{
+        flex-basis: 47%;
+    }
+
+    &__texts{
+        display:flex;
+        align-items:flex-end;
+    }
+}
+
+.travel{
+    &__inner{
+        padding:50px;
+    }
+    &__texts,
+    &__img{
+        flex-basis: 47%;
+    }
+
+    &__texts{
+        display:flex;
+        align-items:flex-end;
+    }
+}
+
+.infor{
+    &__table{
+        margin-bottom: 60px !important;
+    }
+    &__map{
+        height:400px;
+    }
+    
+    &__item{
+        padding:15px 0;
+        p{
+            left: 180px;
+        }
+    }
+}
+
+.appoint{
+
+    &__item{
+        &:nth-child(1){
+            border-right: $cBlack dotted 1px;
+            border-bottom: none;
+
+        }
+    }
+ 
+}
+
+.header{
+    & .logo{
+        justify-content: flex-start;
+    }
+
+}

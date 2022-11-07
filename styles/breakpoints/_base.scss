@@ -1,0 +1,504 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+body {
+    font-family: "Kameron", "Noto Sans JP", sans-serif;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+  }
+
+.font-sm {
+    font-size: 14px;
+}
+
+.font-md {
+    font-size: 17px;
+}
+
+.font-lr {
+    font-size: 17px;
+}
+
+.font-lm {
+    font-size: 20px;
+}
+
+.font-lg {
+    font-size: 25px;
+}
+
+.mb-sm {
+    margin-bottom: 16px !important;
+}
+
+.mb-lg {
+    margin-bottom: 80px !important;
+}
+
+.pb-sm {
+    padding-bottom: 16px !important;
+}
+
+.pb-lg {
+    padding-bottom: 80px !important;
+}
+
+.content-width {
+    width:90%;
+    margin:0 auto;
+    max-width:$contentMaxWidth;
+}
+
+a.anchor{
+    display: block;
+    padding-top: 200px;
+    margin-top: -200px;
+}
+
+.main-title{
+    @extend .font-lg;
+    font-weight:600;
+    margin-bottom: 0;
+    display: block;
+    font-family: 'Kaisei HarunoUmi', serif;
+}
+
+.sub-title{
+    @extend .font-sm;
+    color:$cSubTitle;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column; 
+}
+
+.purple{
+    color: $cWineRed;
+}
+
+// #content{
+//     padding-top:$navHeight;　　hero-sliderの.hero{}に移動　
+// }
+
+#main-content{
+    position:relative;
+    z-index:0;
+}
+
+main{
+    position:relative;
+    z-index:-1;
+}
+
+#container{
+    transition: transform 0.5s, box-shadow 0.5s;
+    background-color: $cWhite;
+    position: relative;
+    z-index: 10;
+}
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:$navHeight;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    z-index:100;
+
+    &.triggered{
+        background-color:rgba(255, 255, 255, 0.9);
+        box-shadow: 10px 0 25px -10px rgba(0, 0, 0, 0.5);
+
+
+    }
+
+    &__nav{
+        display:none;
+
+    }
+
+    &__ul{
+        display:flex;
+        padding:0;
+        margin: 0;
+        list-style: none;
+        align-items: center;
+    }
+
+    &__li{
+        padding:0;
+        margin-left:25px;
+        @extend .font-md;
+        font-family: 'Kaisei HarunoUmi', serif;
+
+        &:hover{
+            & > a{
+                color: chocolate; 
+            }
+        }
+
+        & > a{
+            color:$cBlack;
+            text-decoration: none !important;
+            text-transform:uppercase;
+        }
+    }
+
+    &__inner{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        @extend .content-width;
+    }
+}
+
+.course{
+    @extend .content-width;
+    @extend .mb-lg;
+
+    &__inner{
+        @extend .flex;
+        @extend .mb-sm;
+        justify-content: space-between;
+        padding: 15px;
+        background-color: $cBgGray;
+        position:relative;
+        z-index:0;
+    }
+
+    &__title{
+        position: relative;
+
+        @include p-base($display:none, $width:100px, $height:1px, $top:50%, $left:-120px){
+            background-color:$cBlack;
+            transform:translateY(-50%) scaleX(0);
+            transition:transform 0.3s ease 1.6s;
+            transform-origin:right;
+        }
+
+       
+    }
+
+    &__sub{
+        @extend .mb-sm;
+        color:red;
+    }
+
+    &__img{
+        height:300px;
+        @extend .mb-sm;
+        transition:box-shadow 1ms linear 0.8s;
+
+
+        & > img{
+            object-fit: cover;
+            width:100%;
+            height:100%;
+            z-index:-1;
+            position:relative;
+        }
+
+        &.inview{
+            box-shadow: inset 0 0 30px $cBlack;
+        }
+    }
+
+    &__texts{
+        @extend .pb-sm;
+
+        &.inview {
+            & .travel__title::before{
+                transform:translateY(-50%);
+            }
+        }
+    }
+
+    &__btn{
+        text-align: center;
+    }
+}
+
+
+
+.liquor{
+    @extend .content-width;
+    @extend .mb-lg;
+
+    &__inner{
+        @extend.flex;
+    }
+
+    &__title{
+        @extend .font-lr;
+        // @extend .mb-sm;
+        margin-bottom: 0;
+    }
+
+    &__btn{
+        text-align: center;
+        flex-basis:100%;
+        
+    }
+}
+
+
+.menu{
+    @extend .content-width;
+    @extend .mb-lg;
+
+    .swiperslide{
+        @extend .mb-sm;
+    }
+
+    &__btn{
+        text-align:center;
+    }
+
+}
+
+.seat {
+    @extend .mb-lg;
+
+    &__inner{
+        position:relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            bottom:0;
+            left:o;
+            width:100%;
+            height: 90%;
+            background-color: $cBgGray;
+
+        }
+    }
+    &__header{
+        @extend .content-width;
+    }
+
+    &__container{
+        position:relative;
+        z-index: 2;
+        @extend .flex;
+        @extend .content-width;
+        @extend .pb-sm;
+    }
+
+    &__title{
+        @extend .font-md;
+        @extend .mb-sm;
+    }    
+
+    &__btn{
+        text-align: center;
+        flex-basis:100%;
+        @extend .mb-lg;
+    }
+
+    &__img{
+        height:150px;
+        overflow:hidden;
+        margin-bottom: 5px;
+
+        & > img{
+            object-fit: cover;
+            object-position: bottom;
+            height:100%;
+            width:100%;
+        }
+
+        .vertical{
+            object-position: center;
+        }
+    }
+
+    &__item{
+        &:nth-child(5){
+            display: none;
+
+            & > img{
+                object-position: center;
+            }
+        }
+    }
+}
+
+.infor{
+    @extend .content-width;
+    @extend .mb-lg;
+
+    &__header{
+        @extend .mb-sm;
+        h2{
+            @extend .font-lg;
+        }
+    }
+
+    &__table{
+        @extend .mb-sm;
+        @extend .font-md;
+    }
+
+    &__item{
+        display:flex;
+        align-items: center;
+        position: relative;
+        padding:25px 0;
+        padding-left: 10px;
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+ 
+
+        h3,p{
+            margin:0;
+            padding:0;
+
+        }
+
+        p{
+            position: absolute;
+            left: 120px;
+        }
+    }
+
+    .infor__item:last-child{
+        border-bottom:1px solid rgba(0, 0, 0, 0.5) ;
+    }   
+
+    &__map{
+        height:300px;
+        @extend .mb-sm;
+
+        & > iframe{
+            object-fit: cover;
+            width:100%;
+            height:100%;
+        }
+    }
+
+    &__btn{
+        text-align: center;
+        flex-basis: 100%;
+    }
+
+}
+
+.appoint{
+    @extend .content-width;
+
+    &__title{
+        border-bottom: $cBlack dotted 1px;
+        @extend .mb-sm
+    }
+
+    &__nav{
+        @extend .flex;
+        justify-content: space-between;
+        // align-items:center;
+        text-align: center;
+    }
+
+    &__item{
+        flex-basis: 50%;
+        p{
+            @extend .font-lr;
+        }
+        h3{
+            @extend .font-lm;
+        }
+        button{
+            margin:0;
+        }
+        &:nth-child(1){
+            border-bottom: $cBlack dotted 1px;
+            @extend .mb-sm;
+
+        }
+    }
+
+    &__tel{
+        color:$cBlack;
+        text-decoration: none;
+    }
+}
+
+@media(min-width: 768px){
+    a[href^="tel:"]{
+      pointer-events: none;
+    }
+  }
+
+footer{
+    padding:60px 0;
+    text-align: center;
+    @extend .content-width;
+
+    .logo{
+        margin-bottom: 30px;
+    }
+
+    .icon{
+        position:relative;
+    
+        @include p-base($left:-20px, $top:50%, $width:1em, $height:1em ){
+            transform: translateY(-50%);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    
+        &.instagram{
+            color:$cBlack;
+            text-decoration: none;
+            &:hover{
+                color: orange;
+            }
+
+            &::before{
+                background-image: url(../images/インスタ_icon.jpg);
+            }
+        }
+    }
+    
+    
+    
+}
+
+.logo{
+    font-size: 130px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    &__img{
+        width:0.7em;
+    }
+}
+
+.last{
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color:$cSubTitle;
+    margin-top: 20px;
+
+    &__img{
+        width: 6.7em;
+    }
+
+    & > span{
+        color: $cSubTitle;
+    }
+}

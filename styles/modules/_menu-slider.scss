@@ -1,0 +1,72 @@
+.menu{
+  overflow: hidden;
+}
+
+.swiperslide {
+    overflow:visible !important;
+
+    .swiper-slide {
+      height:300px;
+      overflow: hidden;
+    
+      img {
+        width:100%;
+        height:100%;
+        max-width:100%;
+        object-fit:cover;
+        transform:scale(1.3);
+        transition:transform 1.9s ease;
+      }
+    
+      &::after{
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background-color:rgba(0,61,125,0.1);
+    
+      }
+    
+      &-active{
+        img{
+          transform:none;
+        }
+    
+        .hero__title,
+        .herosub__title,
+        .price{
+          opacity:1;
+        }
+
+      }
+    }
+     
+    
+    .hero__title,
+    .herosub__title,
+    .price{
+      color:$cWhite;
+      z-index:2;
+      opacity:0;
+      transition: opacity 0.3s ease 0.5s;
+  
+    }
+
+    .hero__title{
+      position:absolute;
+      top:83%;
+      right:2%;
+      @extend .font-lm;
+    }
+
+    .price{
+      position:absolute;
+      top:90%;
+      right:2%;
+      @extend .font-lm;
+      text-decoration: underline;
+    }
+
+}
